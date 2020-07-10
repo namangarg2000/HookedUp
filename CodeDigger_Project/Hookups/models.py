@@ -16,7 +16,7 @@ class Project(models.Model):
 	title=models.CharField(max_length=120)
 	categories = models.CharField(max_length=100,choices=CATEGORIES_CHOICES,default='WebDevelopment',blank=False)
 	image=models.ImageField(upload_to='Hookups/images/',blank=True)
-	email=models.URLField(max_length=200)
+	email=models.CharField(max_length=200)
 	description=models.TextField()
 	created=models.DateTimeField(auto_now_add=True)
 	user=models.ForeignKey(User, on_delete=models.CASCADE)
