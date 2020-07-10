@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from Hookups import views
 
 urlpatterns = [
@@ -25,5 +27,17 @@ urlpatterns = [
     path('login/',views.loginuser,name="loginuser"),
     #hookups
     path('',views.home,name="home"),
-
+    path('create/',views.createprojects,name="createprojects"),
+    path('myprojects/',views.myprojects,name="myprojects"),
+    #category
+    path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
+    path('androiddevelopment/',views.androiddevelopment,name="androiddevelopment"),
+    path('blockchain/',views.blockchain,name="blockchain"),
+    path('iot/',views.iot,name="iot"),
+    path('machinelearning/',views.machinelearning,name="machinelearning"),
+    path('iosdevelopment/',views.iosdevelopment,name="iosdevelopment"),
+    path('datascience/',views.datascience,name="datascience"),
+    path('others/',views.others,name="others"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
