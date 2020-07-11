@@ -1,0 +1,14 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+<br>
+<h1>Create!</h1>
+<br>
+<h2>{{ error }}</h2>
+<form method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Get Hooked Up!</button>
+</form>
+<br>
+{% endblock %}

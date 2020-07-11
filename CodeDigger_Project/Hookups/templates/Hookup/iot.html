@@ -1,0 +1,13 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+
+Iot
+<br>
+<br>
+{% for project in projects %}
+<br>
+{{ project.title }} by {{ project.user }}
+<br>
+{% endfor %}
+{% endblock %}
