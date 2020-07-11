@@ -46,13 +46,47 @@ top: 20px;
 }
 
 .ss11 {
+  position: absolute;
 
-  width: 50%;
+ right: 50%;
+ width: 50%;
+ height:585px;
+ background-image: url('images/ss11.png');
+ background-position: 0 0;
+ background-repeat:no-repeat;
+ background-size: cover;
+
+  /*width: 50%;
   position: absolute;
 left:  0px;
   width: 641px;
-  height: 585px;
+  height: 585px;*/
 }
+.ss3{
+  position: absolute;
+
+ right: 50%;
+ width: 50%;
+ height:585px;
+ background-image: url('images/ss3.png');
+ background-position: 0 0;
+ background-repeat:no-repeat;
+ background-size: cover;
+
+}
+.ss4{
+  position: absolute;
+
+ left: 50%;
+ width: 50%;
+ height:585px;
+ background-image: url('images/ss4.png');
+ background-position: 0 0;
+ background-repeat:no-repeat;
+ background-size: cover;
+
+}
+
 
 .video {
   margin-bottom: 100px;
@@ -68,6 +102,7 @@ left:  0px;
   padding: 0px;
   width: 100%;
   background-color: black;
+  height: 585px;
 }
 
 .ss22 {
