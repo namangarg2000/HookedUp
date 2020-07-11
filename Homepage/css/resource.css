@@ -1,0 +1,79 @@
+body {
+  margin: 0px;
+  padding: 0px;
+background-color: #a2de96;
+
+}
+
+.navbar {
+  height: 135px;
+  background-color: black;
+}
+
+.name {
+  height: 65px;
+  position: absolute;
+  left: 240px;
+  top: 40px;
+
+}
+
+.logo {
+  height: 100px;
+position: absolute;
+left: 120px;
+top: 20px;
+}
+
+.navlinks {
+  position: relative;
+  left: 650px;
+  top: 60px;
+  text-decoration-color: black;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+
+  font-size: 22px;
+}
+
+.navlinks:hover {
+  color: #A69F9F;
+}
+.soon{
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Courgette', cursive;
+  margin: 0;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ -ms-transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%);
+
+}
+.footer{
+  background-color: black;
+  height: 140px;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+
+
+
+}
+.footname{
+  height: 50px;
+  position: relative;
+  top:20px;
+
+
+
+}
+.footlogo{
+  height: 80px;
+  position: relative;
+  top: 30px;
+
+
+}
