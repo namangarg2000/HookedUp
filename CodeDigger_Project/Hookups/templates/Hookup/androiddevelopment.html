@@ -7,7 +7,7 @@ Android Development
 <br>
 {% for project in projects %}
 <br>
-{{ project.title }} by {{ project.user }}
+<a href="{% url 'viewprojects' project.id %}">{{ project.title }}</a> by {{ project.user }}
 <br>
 {% endfor %}
 {% endblock %}

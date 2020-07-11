@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -90,5 +90,23 @@ def datascience(request):
 def others(request):
 	projects = Project.objects.filter(categories='Others')
 	return render(request,'Hookup/others.html',{'projects':projects})
+
+def viewprojects(request,Hookup_pk):
+	hookup=get_object_or_404(Project, pk=Hookup_pk)
+	return render(request,'Hookup/viewprojects.html',{'hookup':hookup})
+
+def userviewproject(request,hookup_pk):
+	hookup=get_object_or_404(Project, pk=hookup_pk,user=request.user)
+	if request.method=='GET':
+		form= ProjectForm(instance=hookup)
+		return render(request,'Hookup/userviewproject.html',{'form':form})
+	else:
+		try:
+			form= ProjectForm(request.POST,instance=hookup)
+			form.save()
+			return redirect('myprojects')
+		except ValueError:
+			return render(request,'Hookup/userviewproject.html',{'form':form,'error':'Bad Data Entered'})
+
 
 

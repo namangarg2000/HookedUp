@@ -1,0 +1,17 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+
+MyProjects!(this is user view)
+<br>
+<br>
+
+{{ hookup.title }}
+<br>
+<form method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Save</button>
+</form>
+
+{% endblock %}
