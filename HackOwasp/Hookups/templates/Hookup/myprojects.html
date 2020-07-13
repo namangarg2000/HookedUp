@@ -1,9 +1,10 @@
 {% extends 'Hookup/base.html' %}
 
 {% block content %}
-
-MyProjects!
+MyProjects!<br><br>
 <a href="{% url 'mycompletedprojects' %}">Completed</a>
+<br>
+<a href="{% url 'createprojects' %}">Create</a>
 <br>
 <br>
 {% for project in projects %}
