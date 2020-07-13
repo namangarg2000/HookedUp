@@ -31,6 +31,7 @@ urlpatterns = [
     path('myprojects/',views.myprojects,name="myprojects"),
     path('<int:Hookup_pk>/',views.viewprojects,name="viewprojects"),
     path('myprojects/<int:hookup_pk>/',views.userviewproject,name="userviewproject"),
+    path('myprojects/completed/',views.mycompletedprojects,name="mycompletedprojects"),
     #category
     path('webdevelopment/',views.webdevelopment,name="webdevelopment"),
     path('androiddevelopment/',views.androiddevelopment,name="androiddevelopment"),

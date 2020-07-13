@@ -1,0 +1,14 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+
+MyProjects!
+<a href="{% url 'mycompletedprojects' %}">Completed</a>
+<br>
+<br>
+{% for project in projects %}
+<br>
+<a href="{% url 'userviewproject' project.id %}">{{ project.title }}</a> by {{ project.user }}
+<br>
+{% endfor %}
+{% endblock %}
