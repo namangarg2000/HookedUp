@@ -1,9 +1,9 @@
 body {
   margin: 0px;
   padding: 0px;
-background-color: yellow;
 
 }
+
 .dropbutton {
   color: white;
   padding: 16px;
@@ -63,28 +63,19 @@ top: 20px;
   position: relative;
   left: 650px;
   top: 60px;
+  padding-left: 45px;
   text-decoration-color: black;
   color: white;
   font-family: 'Fredoka One', cursive;
-padding-left: 45px;
+
   font-size: 22px;
 }
 
 .navlinks:hover {
   color: #A69F9F;
 }
-.soon{
-  text-align: center;
-  font-size: 50px;
-  font-family: 'Courgette', cursive;
-  margin: 0;
- position: absolute;
- top: 50%;
- left: 50%;
- -ms-transform: translate(-50%, -50%);
- transform: translate(-50%, -50%);
 
-}
+
 .footer{
   background-color: black;
   height: 140px;
