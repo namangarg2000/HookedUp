@@ -1,4 +1,3 @@
-{% load static %}
 {% if user.is_authenticated %}
 
 Logged in as {{ user.username }}
@@ -11,52 +10,12 @@ Logged in as {{ user.username }}
 
 {% else %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User</title>
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap'%}" >
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap' %}" >
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap' %}" >
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap' %}">
-  <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Quicksand&display=swap' %}">
-  <link rel="icon" href="{% static 'images/favicon.ico' %}">
-</head>
-
-<div class="navbar">
-
-    <img class="logo" src="{% static 'images/logo.png' %}" alt="">
-
-    <img class="name" src="{% static 'images/name.png' %}" alt="">
-
-
-    <a class="navlinks" href="{% static 'index.html' %}">Home</a>
-
-     <div class="dropdown">
-      <a class="dropbuttton navlinks" href="#">Collaborate</a>
-      <div class="dropdown-content">
-        <a href="C:\Users\SHRUTIKA PANDEY\Desktop\to upload\HookedUp\HackOwasp\Hookups\templates\Hookup\androiddevelopment.html">Android Development</a>
-        <a href="\Hookup/blockchain/">BlockChain</a>
-        <a href="\Hookup/datascienc/">Data Science</a>
-        <a href="\Hookup/iosdevelopment/">IOS Development</a>
-        <a href="\Hookup/iot/">IOT</a>
-        <a href="\Hookup/machinelearning/">Machine Learning</a>
-        <a href="\Hookup/webdevelopment/">Web Development</a>
-        <a href="\Hookup/others/">Others</a>
-      </div>
-    </div>
-  <a class="navlinks" href="{% static 'resources.html' %}">Resources</a>
-
-    <a class="navlinks" href="{% url 'loginuser' %}">Login</a>
-
-    <a class="navlinks" href="{% url 'signupuser' %}">Signup</a>
-  </div>
-
-  
-
+<a href="{% url 'signupuser' %}">SignUp</a>
+<a href="{% url 'loginuser' %}">Login</a>
 
 {% endif %}
+
+
 
 {% block content %}
 {% endblock %}
