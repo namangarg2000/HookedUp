@@ -5,6 +5,7 @@ from django.db import IntegrityError
 from django.contrib.auth import login,logout,authenticate
 from .forms import ProjectForm
 from .models import Project
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -38,11 +39,13 @@ def loginuser(request):
 			login(request,user)
 			return redirect('home')
 
+@login_required
 def logoutuser(request):
 	if request.method=='POST':
 		logout(request)
 		return redirect('home')
 
+@login_required
 def createprojects(request):
 	if request.method=='GET':
 		return render(request,'Hookup/createprojects.html',{'form':ProjectForm()})
@@ -56,46 +59,57 @@ def createprojects(request):
 		except ValueError:
 			return render(request,'Hookup/createprojects.html',{'form':ProjectForm(),'error':'Bad data entered!'})
 
+@login_required
 def myprojects(request):
 	projects = Project.objects.filter(user=request.user,completed=False)
 	return render(request,'Hookup/myprojects.html',{'projects':projects})
 
+@login_required
 def webdevelopment(request):
 	projects = Project.objects.filter(categories='WebDevelopment',completed=False)
 	return render(request,'Hookup/webdevelopment.html',{'projects':projects})
 
+@login_required
 def androiddevelopment(request):
 	projects = Project.objects.filter(categories='AndroidDevelopment',completed=False)
 	return render(request,'Hookup/androiddevelopment.html',{'projects':projects})
 
+@login_required
 def blockchain(request):
 	projects = Project.objects.filter(categories='BlockChain',completed=False)
 	return render(request,'Hookup/blockchain.html',{'projects':projects})
 
+@login_required
 def iot(request):
 	projects = Project.objects.filter(categories='IOT',completed=False)
 	return render(request,'Hookup/iot.html',{'projects':projects})
 
+@login_required
 def machinelearning(request):
 	projects = Project.objects.filter(categories='MachineLearning',completed=False)
 	return render(request,'Hookup/machinelearning.html',{'projects':projects})
 
+@login_required
 def iosdevelopment(request):
 	projects = Project.objects.filter(categories='IosDevelopment',completed=False)
 	return render(request,'Hookup/iosdevelopment.html',{'projects':projects})
 
+@login_required
 def datascience(request):
 	projects = Project.objects.filter(categories='DataScience',completed=False)
 	return render(request,'Hookup/datascience.html',{'projects':projects})
 
+@login_required
 def others(request):
 	projects = Project.objects.filter(categories='Others',completed=False)
 	return render(request,'Hookup/others.html',{'projects':projects})
 
+@login_required
 def viewprojects(request,Hookup_pk):
 	hookup=get_object_or_404(Project, pk=Hookup_pk)
 	return render(request,'Hookup/viewprojects.html',{'hookup':hookup})
 
+@login_required
 def userviewproject(request,hookup_pk):
 	hookup=get_object_or_404(Project, pk=hookup_pk,user=request.user)
 	if request.method=='GET':
@@ -109,10 +123,13 @@ def userviewproject(request,hookup_pk):
 		except ValueError:
 			return render(request,'Hookup/userviewproject.html',{'form':form,'error':'Bad Data Entered'})
 
+@login_required
 def mycompletedprojects(request):
 	projects = Project.objects.filter(user=request.user,completed=True)
 	return render(request,'Hookup/mycompletedprojects.html',{'projects':projects})
 
+def resources(request):
+	return render(request,'Hookup/resources.html')
 
 
 

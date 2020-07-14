@@ -5,6 +5,14 @@
 <br>
 <br>
 
-{{ hookup.title }} by {{ hookup.user }}
+{{ hookup.title }}
+<br><br>
+{{ hookup.user }}<br> {{hookup.email}}
+<br>
+<br>
+<img src='{{ hookup.image.url }}' height="100">
+<br><br>
+{{hookup.description}}
+
 
 {% endblock %}

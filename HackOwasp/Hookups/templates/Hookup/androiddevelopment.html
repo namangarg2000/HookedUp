@@ -9,5 +9,9 @@ Android Development
 <br>
 <a href="{% url 'viewprojects' project.id %}">{{ project.title }}</a> by {{ project.user }}
 <br>
+<img src="{{ project.img.url }}" <br><br>
+{{project.description|truncatechars:100}}
+<br>
+<br>
 {% endfor %}
 {% endblock %}
