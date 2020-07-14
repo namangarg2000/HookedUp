@@ -1,16 +1,21 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
-
-Android Development
+<link rel="stylesheet" href="{% static 'cssotherpage/androiddevelopmentstyles.css' %}">
+<h1>ANDROID DEVELOPMENT</h1>
 <br>
 <br>
+<h3>
 {% for project in projects %}
 <br>
-<a href="{% url 'viewprojects' project.id %}">{{ project.title }}</a> by {{ project.user }}
-<br>
-<img src="{{ project.img.url }}" <br><br>
-{{project.description|truncatechars:100}}
+<div class="form">
+    <a href="{% url 'viewprojects' project.id %}">{{ project.title }}</a> by {{ project.user }}
+    <br>
+    <img src="{{ project.img.url }}" <br><br>
+    {{project.description|truncatechars:100}}
+</div>
+</h3>
 <br>
 <br>
 {% endfor %}

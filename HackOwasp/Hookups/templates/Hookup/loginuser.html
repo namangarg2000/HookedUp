@@ -1,15 +1,22 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
 <br>
+<link rel="stylesheet" href="{% static 'cssotherpage/loginstyles.css' %}">
 <h1>Login!</h1>
 <br>
-<h2>{{ error }}</h2>
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">Login</button>
-</form>
 <br>
-<br>
-New Over Here? <a href="{% url 'signupuser' %}">Signup!</a> {% endblock %}
+<div class="form">
+	<h2>{{ error }}</h2>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+		<button  class="btn" type="submit">Login</button>
+	</form>
+	<br>
+	
+	New Over Here? <a href="{% url 'signupuser' %}">Signup!</a> 
+</div>
+{% endblock %}

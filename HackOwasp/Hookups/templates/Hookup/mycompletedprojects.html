@@ -1,13 +1,20 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
-
-MyProjects!
+<link rel="stylesheet" href="{% static 'cssotherpage/mycompletedprojectstyles.css' %}">
+<h1>MY PROJECTS!</h1>
 <br>
-<br>
-{% for project in projects %}
-<br>
-<a href="{% url 'userviewproject' project.id %}">{{ project.title }}</a> by {{ project.user }}
-<br>
+    <h3>
+    <br>
+    {% for project in projects %}
+    <div class="form">
+    <br>
+    <a href="{% url 'userviewproject' project.id %}">{{ project.title }}</a>
+    <img src="{{ project.img.url }}"><br><br>
+    <br>{{project.description}}
+    </h3>
+    <br>
+    </div>
 {% endfor %}
 {% endblock %}

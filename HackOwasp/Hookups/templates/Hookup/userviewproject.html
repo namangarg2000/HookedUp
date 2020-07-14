@@ -1,18 +1,22 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
-
-MyProjects!(this is user view)
+<link rel="stylesheet" href="{% static 'cssotherpage/userviewprojectstyles.css' %}">
+<h1>MyProjects!(this is user view)</h1>
 <br>
 <br>
-
-{{ hookup.title }}
 <br>
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">Save</button>
-</form>
+<div class="form">
+	<h3>
+	{{ hookup.title }}
+	<br>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn" type="submit">Save</button>
+	</form>
+	</h3>
 <br>
 
 {% endblock %}

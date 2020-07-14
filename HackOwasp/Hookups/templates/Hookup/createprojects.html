@@ -1,14 +1,19 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
 <br>
-<h1>Create!</h1>
+<link rel="stylesheet" href="{% static 'cssotherpage/createprojectsstyles.css' %}">
+<h1>CREATE YOUR PROJECT!</h1>
 <br>
-<h2>{{ error }}</h2>
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">Get Hooked Up!</button>
-</form>
+<div class="form">
+	<h2>{{ error }}</h2>
+	<h3>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="btn" type="submit">Get Hooked Up!</button>
+	</form>
+	</h3>
 <br>
 {% endblock %}

@@ -1,13 +1,20 @@
 {% extends 'Hookup/base.html' %}
+{% load static %}
 
 {% block content %}
-
-Data Science
+<link rel="stylesheet" href="{% static 'cssotherpage/androiddevelopmentstyles.css' %}">
+<h1>
+DATA SCIENCE
+</h1>
 <br>
 <br>
+<h3>
 {% for project in projects %}
 <br>
-
+<div class="form">
+    <a href="{% url 'viewprojects' project.id %}">{{ project.title }}</a> by {{ project.user }}
+</div>
+</h3>
 <br>
 {% endfor %}
 {% endblock %}
