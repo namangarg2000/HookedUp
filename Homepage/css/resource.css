@@ -40,6 +40,9 @@ background-color: yellow;
 .dropdown:hover .dropdown-content {display: block;}
 
 .navbar {
+  position: absolute;
+  top: 0px;
+  width: 100%;
   height: 135px;
   background-color: black;
 }
