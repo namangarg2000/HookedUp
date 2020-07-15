@@ -1,0 +1,30 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<h2 class="mt-5">Block Chain</h2>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if project.image %}
+    <a href="{% url 'viewprojects' project.id %}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+
+    <a href="{% url 'viewprojects' project.id %}">
+      <img src="{% static 'Hookups/name.png' %}" class="img-fluid mb-2">
+    </a>
+
+    {% endif %}
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.description|truncatechars:100 }}</p>
+
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

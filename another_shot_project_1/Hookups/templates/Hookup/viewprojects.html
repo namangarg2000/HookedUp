@@ -1,0 +1,18 @@
+{% extends 'Hookup/base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ hookup.title }}</h1>
+
+<h5 class="text-center text-muted mb-5">{{ hookup.user }}</h5>
+
+<h6 class="text-center text-muted mb-5">{{ hookup.email }}</h6>
+
+{{ hookup.description|safe }}
+
+
+
+{% endblock %}
+
+
+
